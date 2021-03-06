@@ -5,8 +5,7 @@ plugins {
     id 'io.spring.dependency-management'
 }
 
-group = 'com.kodilla'
-mainClassName= 'com.kodilla.LibraryApplication'
+group = 'com.kodilla.library'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
