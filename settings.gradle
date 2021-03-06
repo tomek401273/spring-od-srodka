@@ -1,2 +1,3 @@
 rootProject.name = 'springodsrodka'
 include '1.1Security:library'
+include '1.1Security:exercise1'
