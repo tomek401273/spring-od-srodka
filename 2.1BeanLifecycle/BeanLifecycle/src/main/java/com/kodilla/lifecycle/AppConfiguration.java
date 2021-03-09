@@ -14,4 +14,9 @@ public class AppConfiguration {
     public BeanMonitor beanMonitor(){
         return new BeanMonitor();
     }
+
+    @Bean
+    public SystemLoggerPostProcessor systemLoggerPostProcessor(){
+        return new SystemLoggerPostProcessor();
+    }
 }
