@@ -9,3 +9,6 @@ include '2.1BeanLifecycle:BeanLifecycle'
 include '2.2Events:Events'
 include '2.2Events:exercise1'
 include '2.4ByteCode:ByteManipulation'
+include '3.1Instrumentation:Instrumentation'
+include '3.1Instrumentation:KodillaAgent'
+

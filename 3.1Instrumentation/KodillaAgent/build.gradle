@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.kodilla.agent'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+jar {
+    archiveName("kodilla-agent.jar")
+    //fat jar
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }}
+
+    manifest {
+        attributes(
+                'Premain-Class' : 'com.kodilla.agent.Agent',
+                'Can-Redefine-Classes' : 'true',
+                'Can-Retransform-Classes' : 'true'
+        )
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    compile 'net.bytebuddy:byte-buddy:1.10.13'
+}
+
+test {
+    useJUnitPlatform()
+}
+/*
+ run commands
+    ./gradlew :3.1Instrumentation:Instrumentation:build
+    ./gradlew :3.1Instrumentation:KodillaAgent:build
+    java -javaagent:./3.1Instrumentation/KodillaAgent/build/libs/kodilla-agent.jar -jar ./3.1Instrumentation/Instrumentation/build/libs/springodsrodka-0.0.1-SNAPSHOT.jar
+*/
