@@ -1,5 +1,6 @@
-package com.kodilla.reactive;
+package com.kodilla.reactive.first.flux;
 
+import com.kodilla.reactive.model.Book;
 import reactor.core.publisher.Flux;
 
 public class FirstFluxCheck {
